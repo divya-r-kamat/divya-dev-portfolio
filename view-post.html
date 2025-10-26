@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View Post</title>
-  styles/styles.css
-  https://cdn.jsdelivr.net/npm/marked/marked.min.js</script>
+  <title>View Post | Divya.dev</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo"><strong>Divya.dev</strong></div>
       <div>
-        index.htmlHome</a>
-        blog.htmlBlog</a>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <section>
+    <section class="post-container">
       <div id="post-content">Loading...</div>
     </section>
   </main>
-
   <footer>
-    © 2025 Divya Kamat
+    © 2025 Divya Kamat. Built with ❤️
   </footer>
-
   <script>
     const params = new URLSearchParams(window.location.search);
     const file = params.get("file");
-
+    
     if (file) {
       fetch(`https://raw.githubusercontent.com/divya-r-kamat/divya-dev-portfolio/main/posts/${file}`)
         .then(res => {
