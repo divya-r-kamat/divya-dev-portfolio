@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View Blog Post</title>
+  <title>View Post</title>
   <link rel="stylesheet" href="styles/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -11,25 +11,40 @@
   <header>
     <nav>
       <div class="logo"><strong>Divya.dev</strong></div>
-      <div><a href="blog.html">Back to Blog</a></div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+      </div>
     </nav>
   </header>
 
   <main>
-    <div id="post-content">Loading...</div>
+    <section>
+      <div id="post-content">Loading...</div>
+    </section>
   </main>
 
-  <footer>© 2025 Divya Kamat</footer>
+  <footer>
+    © 2025 Divya Kamat
+  </footer>
 
   <script>
-    async function loadPost() {
-      const params = new URLSearchParams(window.location.search);
-      const file = params.get("file");
-      const res = await fetch("posts/" + file);
-      const text = await res.text();
-      document.getElementById("post-content").innerHTML = marked.parse(text);
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    if (file) {
+      fetch(`https://raw.githubusercontent.com/divya-r-kamat/divya-dev-portfolio/main/posts/${file}`)
+        .then(res => res.text())
+        .then(text => {
+          document.getElementById("post-content").innerHTML = marked.parse(text);
+        })
+        .catch(err => {
+          document.getElementById("post-content").innerHTML = "<p>Failed to load post.</p>";
+          console.error(err);
+        });
+    } else {
+      document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
     }
-    loadPost();
   </script>
 </body>
 </html>
