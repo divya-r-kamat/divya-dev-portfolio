@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Blog Post</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><strong>Divya.dev</strong></div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Create a New Blog Post</h2>
+
+      <label>Post Title:</label>
+      <input type="text" id="title" placeholder="Enter your post title" style="width:100%;padding:10px;font-size:1rem;margin-bottom:1rem;border-radius:6px;border:1px solid #ccc;">
+
+      <label>Write in Markdown:</label>
+      <textarea id="markdown" rows="12" placeholder="Write your blog post in Markdown..." style="width:100%;padding:10px;font-size:1rem;border-radius:6px;border:1px solid #ccc;"></textarea>
+
+      <div style="margin-top:1rem;">
+        <button id="previewBtn" class="button" style="background:#888;">Preview</button>
+        <button id="publishBtn" class="button">Publish</button>
+      </div>
+
+      <h3 style="margin-top:2rem;">Preview:</h3>
+      <div id="preview" style="background:#fff;border-radius:10px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.1);"></div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Divya Kamat
+  </footer>
+
+  <script src="scripts/new-post.js"></script>
+</body>
+</html>
