@@ -1,30 +1,30 @@
-const blogList = document.getElementById("blog-list");
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("blog-container");
 
-// Define your posts here manually (or auto-generate later)
-const posts = [
-  {
-    title: "My Journey into Data Science",
-    file: "machine-learning-journey.md",
-    date: "2019-02-18",
-    summary: "How I transitioned into Data Science and what I learned along the way."
-  },
-  {
-    title: "Advanced Tab Manager",
-    file: "tab-manager.md",
-    date: "2025-10-10",
-    summary: " Tab overload is a common problem for developers, researchers, and just about anyone who spends their day online."
+  try {
+    const res = await fetch("posts/");
+    const text = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+
+    const files = Array.from(doc.querySelectorAll("a"))
+      .filter(a => a.href.endsWith(".md"))
+      .map(a => a.textContent);
+
+    if (files.length === 0) {
+      container.innerHTML = "<p>No blog posts yet.</p>";
+      return;
+    }
+
+    container.innerHTML = files
+      .map(file => `
+        <div class="blog-card">
+          <h3><a href="view-post.html?file=${file}">${file.replace(".md", "")}</a></h3>
+          <p>Click to read this post.</p>
+        </div>
+      `)
+      .join("");
+  } catch (err) {
+    container.innerHTML = "<p>Unable to load posts.</p>";
   }
-];
-
-// Display posts
-posts.forEach(post => {
-  const card = document.createElement("div");
-  card.className = "project-card";
-  card.innerHTML = `
-    <h3>${post.title}</h3>
-    <p class="summary">${post.summary}</p>
-    <p class="date">${new Date(post.date).toDateString()}</p>
-    <a href="view-post.html?file=${encodeURIComponent(post.file)}" class="btn-outline">Read More</a>
-  `;
-  blogList.appendChild(card);
 });
