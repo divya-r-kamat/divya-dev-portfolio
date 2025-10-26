@@ -5,7 +5,7 @@ const posts = [
   {
     title: "My Journey into Data Science",
     file: "machine-learning-journey.md",
-    date: "2025-10-20",
+    date: "2019-02-18",
     summary: "How I transitioned into Data Science and what I learned along the way."
   },
   {
