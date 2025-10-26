@@ -3,84 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Divya Kamat | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script defer src="script.js"></script>
-  <link rel="icon" href="assets/favicon.ico" />
+  <title>Divya Kamat | Data Scientist</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-logo">Divya<span class="accent">.dev</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Divya.<span>dev</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Hi, I'm <span class="accent">Divya Kamat</span></h1>
-      <p class="subtitle">Data Scientist | Machine Learning Engineer | Problem Solver</p>
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Divya Kamat</span></h1>
+      <p>Data Scientist | Machine Learning Engineer | Problem Solver</p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
-    <img src="assets/profile.png" alt="Divya Kamat" class="hero-img" />
+    <img src="media/profile.jpg" alt="Divya Kamat" class="hero-img" />
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="about">
     <h2 class="section-title">About Me</h2>
     <p class="section-text">
-      I'm a passionate Data Scientist with a love for uncovering patterns in data and
-      building intelligent systems that make life easier. I enjoy combining statistics,
-      programming, and curiosity to turn messy datasets into meaningful insights.
+      I'm a passionate Data Scientist with a love for uncovering patterns in data and building intelligent systems that make life easier. 
+      I enjoy combining statistics, programming, and curiosity to turn messy datasets into meaningful insights.
     </p>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="section">
+  <section id="projects" class="projects">
     <h2 class="section-title">Featured Projects</h2>
-    <div id="project-list" class="project-grid">
-      <!-- Project cards injected by script.js -->
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="media/project1.png" alt="ShadowBot" />
+        <h3>ShadowBot</h3>
+        <p>Full-stack AI overlay desktop application for interviews and sales calls.</p>
+        <span class="tags">Electron · Gemini · MCP</span>
+      </div>
+      <div class="project-card">
+        <img src="media/project2.png" alt="Navigators.AI" />
+        <h3>Navigators.AI</h3>
+        <p>Agentic AI Travel Application that plans itineraries from multimodal input.</p>
+        <span class="tags">Llama-8B · CLIP · AWS ECS</span>
+      </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="section">
+  <section id="skills" class="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-card">Python</div>
-      <div class="skill-card">Machine Learning</div>
-      <div class="skill-card">Deep Learning</div>
-      <div class="skill-card">SQL</div>
-      <div class="skill-card">Pandas</div>
-      <div class="skill-card">TensorFlow</div>
-      <div class="skill-card">Git</div>
-      <div class="skill-card">Power BI</div>
+      <span>Python</span>
+      <span>Machine Learning</span>
+      <span>Deep Learning</span>
+      <span>SQL</span>
+      <span>Pandas</span>
+      <span>TensorFlow</span>
+      <span>Git</span>
+      <span>Power BI</span>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-text">
-      Interested in collaborating or just want to say hi? Let’s connect!
-    </p>
-    <div class="contact-links">
-      <a href="mailto:divya.kamat@example.com" class="btn">Email Me</a>
-      <a href="https://github.com/divya-r-kamat" target="_blank" class="btn-outline">GitHub</a>
-      <a href="https://www.linkedin.com/in/divya-r-kamat" target="_blank" class="btn-outline">LinkedIn</a>
-    </div>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Let's connect! Feel free to reach out via <a href="mailto:divya@example.com">email</a> or LinkedIn.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    © 2025 Divya Kamat. Built with ❤️ and curiosity.
+    <p>© 2025 Divya Kamat | Built with ❤️ using HTML, CSS & JavaScript</p>
   </footer>
 </body>
 </html>
