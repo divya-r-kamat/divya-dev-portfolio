@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divya.dev Blog</title>
+  <title>Divya’s Blog</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <script defer src="blog.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -13,7 +13,7 @@
       <div class="logo"><strong>Divya.dev</strong></div>
       <div>
         <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class="active">Blog</a>
       </div>
     </nav>
   </header>
@@ -21,13 +21,14 @@
   <main>
     <section>
       <h2>My Blog Posts</h2>
-      <div id="blog-container"></div>
-      <a href="new-post.html" class="button">Create New Blog</a>
+      <div id="blog-container" style="display: grid; gap: 1.5rem;"></div>
     </section>
   </main>
 
   <footer>
     © 2025 Divya Kamat
   </footer>
+
+  <script src="scripts/blog.js"></script>
 </body>
 </html>
