@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divya.dev | Data Scientist Portfolio</title>
+  <title>Divya Kamat | Data Scientist & ML Engineer</title>
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <header>
     <nav>
       <div class="logo"><strong>Divya.dev</strong></div>
-      <div>
-        <a href="index.html">Home</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
         <a href="blog.html">Blog</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -21,51 +21,142 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Hi, I'm Divya Kamat 👋</h1>
-      <p>Data Scientist | Machine Learning Engineer | Problem Solver</p>
-      <img src="your-photo.jpg" alt="Divya Kamat">
-      <br>
-      <a href="#projects" class="button">View My Work</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-badge">👋 Welcome to my portfolio</div>
+        <h1>Hi, I'm <span class="gradient-text">Divya Kamat</span></h1>
+        <p class="hero-subtitle">Data Scientist | Machine Learning Engineer | AI Enthusiast</p>
+        <p class="hero-description">
+          Experienced in Data Integration, Machine Learning, and AI solutions. 
+          Passionate about building data-driven systems that solve real-world problems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="button button-primary">View My Work</a>
+          <a href="#contact" class="button button-secondary">Get In Touch</a>
+        </div>
+      </div>
     </section>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m a passionate Data Scientist with a love for uncovering patterns in data and building intelligent systems that make life easier.
-        I enjoy combining statistics, programming, and curiosity to turn messy datasets into meaningful insights.
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-content">
+        <p>
+          I'm an experienced professional with a strong background in <strong>Data Integration</strong> 
+          and <strong>Machine Learning</strong>. I have a proven track record in developing data-driven 
+          solutions and extracting actionable insights through advanced analytics.
+        </p>
+        <p>
+          My expertise spans across building <strong>Data Integration Pipelines</strong> with tools 
+          like Azure Synapse, SnapLogic, and Ab Initio, as well as delivering cutting-edge solutions in 
+          <strong>Predictive Maintenance, Causal AI, Forecasting, Anomaly Detection</strong>, and 
+          <strong>Generative AI</strong>.
+        </p>
+        <p>
+          I'm particularly interested in <strong>NLP, Machine Learning & AI Research</strong> roles 
+          and eager to contribute to any Machine Learning or AI project for Social Good.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div id="project-list" class="project-grid">
+        <div class="loading">Loading projects...</div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <h2>Skills & Expertise</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>💻 Programming & Tools</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Unix Shell Scripting</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>🤖 Machine Learning & AI</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Text Analytics</span>
+            <span class="skill-tag">Generative AI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🔧 Data Engineering</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Azure Synapse</span>
+            <span class="skill-tag">SnapLogic</span>
+            <span class="skill-tag">Ab Initio</span>
+            <span class="skill-tag">ETL Pipelines</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>📊 Data Analysis & Visualization</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Data Mining</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🎯 Specialized Areas</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Predictive Maintenance</span>
+            <span class="skill-tag">Causal AI</span>
+            <span class="skill-tag">Forecasting</span>
+            <span class="skill-tag">Anomaly Detection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="section-header">
+        <h2>Let's Connect</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="contact-text">
+        I'm always interested in hearing about new opportunities and collaborations.
+        Feel free to reach out!
       </p>
-    </section>
-
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <ul>
-        <li><strong>Customer Churn Prediction:</strong> Built a predictive model to reduce churn using XGBoost.</li>
-        <li><strong>Real-Time Anomaly Detection:</strong> Designed an adaptive ML system for proactive alerting.</li>
-      </ul>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python</li>
-        <li>Machine Learning</li>
-        <li>Deep Learning</li>
-        <li>SQL</li>
-        <li>TensorFlow</li>
-        <li>Pandas</li>
-        <li>Power BI</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Let’s connect! You can reach me at <a href="mailto:divya@example.com">divya@example.com</a>.</p>
+      <div class="contact-buttons">
+        <a href="mailto:divya@example.com" class="button button-primary">📧 Email Me</a>
+        <a href="https://github.com/divya-r-kamat" target="_blank" class="button button-secondary">🔗 GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="button button-secondary">💼 LinkedIn</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Divya Kamat. Built with ❤️ using GitHub Pages.
+    <p>© 2025 Divya Kamat. Built with ❤️ and deployed on GitHub Pages.</p>
   </footer>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
