@@ -7,8 +7,11 @@ async function loadBlogs() {
 
   try {
     const res = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/posts`);
-    const files = await res.json();
+    if (!res.ok) {
+      throw new Error(`GitHub API returned status ${res.status}`);
+    }
 
+    const files = await res.json();
     const mdFiles = files.filter(f => f.name.endsWith(".md"));
 
     if (mdFiles.length === 0) {
@@ -31,13 +34,13 @@ async function loadBlogs() {
       card.innerHTML = `
         <h3>${title}</h3>
         <p>${preview}...</p>
-        <a class="button" href="view-post.html?file=${encodeURIComponent(file.name)}">Read more</a>
+        <a class="button" href="view-post.html?file=${encodeURIComponent>
       `;
       container.appendChild(card);
     }
 
   } catch (err) {
-    console.error(err);
+    console.error("Error loading posts:", err);
     container.innerHTML = "<p>⚠️ Failed to load blog posts. Check console for details.</p>";
   }
 }
