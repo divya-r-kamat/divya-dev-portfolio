@@ -205,3 +205,27 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid var(--border);
 }
+
+.blog-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+.blog-card p {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
