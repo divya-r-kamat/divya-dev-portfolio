@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Divya.dev</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Blog Post</title>
+  <link rel="stylesheet" href="styles/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-logo">Divya<span class="accent">.dev</span></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <div class="logo"><strong>Divya.dev</strong></div>
+      <div><a href="blog.html">Back to Blog</a></div>
+    </nav>
+  </header>
 
-  <section id="post-content" class="section"></section>
+  <main>
+    <div id="post-content">Loading...</div>
+  </main>
 
-  <footer>
-    © 2025 Divya Kamat
-  </footer>
+  <footer>© 2025 Divya Kamat</footer>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const file = urlParams.get("file");
-
-    fetch(`posts/${file}`)
-      .then(res => res.text())
-      .then(md => {
-        document.getElementById("post-content").innerHTML = marked.parse(md);
-      })
-      .catch(() => {
-        document.getElementById("post-content").innerHTML =
-          "<p>Sorry, this post could not be loaded.</p>";
-      });
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file");
+      const res = await fetch("posts/" + file);
+      const text = await res.text();
+      document.getElementById("post-content").innerHTML = marked.parse(text);
+    }
+    loadPost();
   </script>
 </body>
 </html>
