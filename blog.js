@@ -6,7 +6,7 @@ async function loadBlogs() {
   container.innerHTML = "<p>Loading posts...</p>";
 
   try {
-    const res = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/posts`);
+    const res = await fetch(`https://api.github.com/repos/${username}/${repo}/posts`);
     const files = await res.json();
 
     const mdFiles = files.filter(f => f.name.endsWith(".md"));
