@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View Post</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  styles/styles.css
+  https://cdn.jsdelivr.net/npm/marked/marked.min.js</script>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo"><strong>Divya.dev</strong></div>
       <div>
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
+        index.htmlHome</a>
+        blog.htmlBlog</a>
       </div>
     </nav>
   </header>
@@ -34,16 +34,21 @@
 
     if (file) {
       fetch(`https://raw.githubusercontent.com/divya-r-kamat/divya-dev-portfolio/main/posts/${file}`)
-        .then(res => res.text())
+        .then(res => {
+          if (!res.ok) {
+            throw new Error(`Failed to fetch post: ${res.status}`);
+          }
+          return res.text();
+        })
         .then(text => {
           document.getElementById("post-content").innerHTML = marked.parse(text);
         })
         .catch(err => {
-          document.getElementById("post-content").innerHTML = "<p>Failed to load post.</p>";
+          document.getElementById("post-content").innerHTML = "<p>⚠️ Failed to load post.</p>";
           console.error(err);
         });
     } else {
-      document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
+      document.getElementById("post-content").innerHTML = "<p>⚠️ No post specified.</p>";
     }
   </script>
 </body>
